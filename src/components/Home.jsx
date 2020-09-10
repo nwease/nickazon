@@ -13,8 +13,6 @@ const Home = () => {
 
                <div className='home__row'>
                    <Product />
-                    {/*PRODUCT*/}
-                    {/*PRODUCT*/}
                </div>
 
                <div className='home__row'>
