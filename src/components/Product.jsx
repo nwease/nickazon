@@ -1,12 +1,12 @@
 import React from 'react';
 import '../css/Product.css'
 
-const Product = () => {
+const Product = ({title, image, price, rating}) => {
     return (
         <div className='product'>
             <div className='product__information'>
                 <p>
-                    The Lean Startup
+                    {title}
                 </p>
 
                 <p className='product__price'>
@@ -15,19 +15,23 @@ const Product = () => {
                     </small>
 
                     <strong>
-                        19.99
+                        {price}
                     </strong>
                 </p>
 
                 <div className='product__rating'>
-                    <p>
-                        *
-                    </p>
+                    {Array(rating)
+                        .fill()
+                        .map((_, i) => (
+                        <i className='a-icon a-icon-star a-star-4-5'>
+                            *
+                        </i>
+                    ))}
                 </div>
             </div>
 
             <img
-                src='https://images-na.ssl-images-amazon.com/images/I/81jgCiNJPUL.jpg'
+                src={image}
                 alt='The Lean Startup'
             />
 
