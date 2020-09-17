@@ -22,19 +22,21 @@ const Header = () => {
             <div className='header__search'>
                 <input className='header__input' type='text'/>
 
-                <SearchIcon className='header__searchIcon' />
+                <SearchIcon className='header__searchIcon'/>
             </div>
 
             <div className='header__navigation'>
-                <div className='header__option'>
-                    <span className='header__option1'>
-                        Hello,
-                    </span>
+                <Link to='/login'>
+                    <div className='header__option'>
+                        <span className='header__option1'>
+                            Hello,
+                        </span>
 
-                    <span className='header__option2'>
-                        Sign-in
-                    </span>
-                </div>
+                        <span className='header__option2'>
+                            Sign-in
+                        </span>
+                    </div>
+                </Link>
 
                 <div className='header__option'>
                     <span className='header__option1'>
@@ -58,7 +60,7 @@ const Header = () => {
 
                 <Link to='/checkout'>
                     <div className='header__optionBasket'>
-                        <ShoppingBasketIcon />
+                        <ShoppingBasketIcon/>
 
                         <span className='header__option2 header__basketCount'>
                             {basket?.length}

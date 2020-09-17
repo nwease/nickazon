@@ -20,6 +20,19 @@ const reducer = (state, action) => {
                 (basketItem) => basketItem.id === action.id
             );
 
+            let newBasket = [...state.basket];
+
+            if (index >= 0) {
+                newBasket.splice(index, 1);
+            } else {
+                console.warn(`Cant remove product (id: ${action.id}) as it is not in the basket!`)
+            }
+
+            return {
+                ...state,
+                basket: newBasket,
+            }
+
         default:
             return state;
     }
