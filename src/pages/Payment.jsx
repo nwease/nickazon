@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../css/Payment.css';
 import {useStateValue} from '../Provider';
 import ProductCheckout from '../components/ProductCheckout';
 import {Link, useHistory} from 'react-router-dom';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import {CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import {getBasketTotal} from '../reducer';
 import CurrencyFormat from 'react-currency-format';
 import axios from '../axios';
-import { db } from '../firebase';
+import {db} from '../firebase';
 
 const Payment = () => {
 
@@ -19,7 +19,7 @@ const Payment = () => {
 
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState('');
-    
+
     const [error, setError] = useState(null);
     const [disabled, setDisabled] = useState(true);
     const [clientSecret, setClientSecret] = useState(true);
@@ -38,7 +38,7 @@ const Payment = () => {
     }, [basket])
 
     console.log('Secret shit', clientSecret)
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
@@ -64,14 +64,14 @@ const Payment = () => {
             setError(null);
             setProcessing(false);
 
-            dispatch ({
+            dispatch({
                 type: 'EMPTY_BASKET'
             })
 
             history.replace('/orders');
         })
     }
-    
+
     const handleChange = (e) => {
         setDisabled(e.empty);
         setError(e.error ? e.error.message : '');
@@ -82,9 +82,9 @@ const Payment = () => {
             <div className='payment__container'>
                 <h1>
                     Checkout (
-                        <Link to='/checkout'>
-                            {basket?.length} items
-                        </Link>
+                    <Link to='/checkout'>
+                        {basket?.length} items
+                    </Link>
                     )
                 </h1>
                 <div className='payment__section'>
@@ -140,8 +140,8 @@ const Payment = () => {
 
                     <div className='payment__details'>
                         <form onSubmit={handleSubmit} action=''>
-                            <CardElement onChange={handleChange} />
-                            
+                            <CardElement onChange={handleChange}/>
+
                             <div className='payment__priceContainer'>
                                 <CurrencyFormat
                                     renderText={(value) => (

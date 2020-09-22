@@ -4,7 +4,7 @@ import {useStateValue} from '../Provider';
 
 const ProductCheckout = ({id, image, price, rating, title, hideButton}) => {
 
-    const [{basket}, dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
 
     const removeFromBasket = () => {
         dispatch({

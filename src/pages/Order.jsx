@@ -12,7 +12,7 @@ const Order = ({order}) => {
             </h2>
 
             <p>
-                {moment.unix (order.data.created).format('YYYY-MM-DD, h:mma')}
+                {moment.unix(order.data.created).format('YYYY-MM-DD, h:mma')}
             </p>
 
             <p className='order__id'>

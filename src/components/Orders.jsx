@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {db} from '../firebase';
 import '../css/Orders.css';
 import {useStateValue} from '../Provider';
@@ -6,11 +6,11 @@ import Order from '../pages/Order';
 
 const Orders = () => {
 
-    const [{basket, user}] = useStateValue();
+    const [{user}] = useStateValue();
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        if(user) {
+        if (user) {
             db
                 .collection('users')
                 .doc(user?.uid)
@@ -37,7 +37,7 @@ const Orders = () => {
             <div className='orders__order'>
                 {
                     orders?.map(order => (
-                        <Order order={order} />
+                        <Order order={order}/>
                     ))
                 }
             </div>

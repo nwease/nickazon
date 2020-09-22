@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout.jsx';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Login from './pages/Login';
 import {auth} from './firebase';
 import {useStateValue} from './Provider';
@@ -41,30 +41,30 @@ function App() {
             <div className='app'>
                 <Switch>
                     <Route path='/orders'>
-                        <Header />
-                        <Orders />
+                        <Header/>
+                        <Orders/>
                     </Route>
 
                     <Route path='/login'>
-                        <Login />
+                        <Login/>
                     </Route>
 
                     <Route path='/checkout'>
-                        <Header />
-                        <Checkout />
+                        <Header/>
+                        <Checkout/>
                     </Route>
 
                     <Route path='/payment'>
-                        <Header />
+                        <Header/>
 
                         <Elements stripe={promise}>
-                            <Payment />
+                            <Payment/>
                         </Elements>
                     </Route>
 
                     <Route path='/'>
-                        <Header />
-                        <Home />
+                        <Header/>
+                        <Home/>
                     </Route>
                 </Switch>
             </div>

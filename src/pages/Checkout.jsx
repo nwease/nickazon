@@ -19,7 +19,7 @@ const Checkout = () => {
 
                 <div>
                     <h3>
-                       Hello, {user?.email}
+                        Hello, {user?.email}
                     </h3>
 
                     <h2 className='checkout__title'>
@@ -41,7 +41,7 @@ const Checkout = () => {
             </div>
 
             <div className='checkout__right'>
-                <Subtotal />
+                <Subtotal/>
             </div>
         </div>
     );

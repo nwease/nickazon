@@ -7,12 +7,12 @@ import {Provider} from './Provider';
 import reducer, {initialState} from './reducer';
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Provider initialState={initialState} reducer={reducer}>
-          <App />
-      </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider initialState={initialState} reducer={reducer}>
+            <App/>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 serviceWorker.unregister();

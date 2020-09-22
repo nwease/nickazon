@@ -6,7 +6,7 @@
 	align-items: center;
 }
 
-.login__logo  {
+.login__logo {
 	object-fit: contain;
 	margin: 20px auto;
 	width: 100px;

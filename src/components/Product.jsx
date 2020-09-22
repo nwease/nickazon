@@ -43,7 +43,7 @@ const Product = ({title, image, price, rating, id}) => {
                             <span>
                                 🌟
                             </span>
-                    ))}
+                        ))}
                 </div>
             </div>
 
